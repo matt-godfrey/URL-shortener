@@ -1,24 +1,24 @@
 'use strict';
-
+require('dotenv').config()
 var express = require('express');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
 var cors = require('cors');
-require('dotenv').config()
+
 
 var Url = require('./URL-model');
 const { estimatedDocumentCount } = require('./URL-model');
 
 var app = express();
 
-const uri = process.env.MONGO_URI;
+const uri = process.env.MONGO_URI || 'mongodb://localhost/afternoon-spire-46222';
 // Basic Configuration 
 var port = process.env.PORT || 3000;
 
 /** this project needs a db !! **/ 
 // mongoose.connect(process.env.DB_URI);
-mongoose.connect(uri || 'mongodb://localhost/afternoon-spire-46222', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(cors());
 
@@ -136,4 +136,3 @@ app.listen(port, function () {
   console.log('Node.js listening ...');
 });
 
-'module.exports = server';
