@@ -18,7 +18,7 @@ var port = process.env.PORT || 3000;
 
 /** this project needs a db !! **/ 
 // mongoose.connect(process.env.DB_URI);
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(uri || 'mongodb://localhost/afternoon-spire-46222', { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(cors());
 
@@ -135,3 +135,5 @@ return url.protocol == "http:" || url.protocol == "https:"
 app.listen(port, function () {
   console.log('Node.js listening ...');
 });
+
+'module.exports = server';
