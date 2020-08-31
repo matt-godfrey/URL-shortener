@@ -1,10 +1,10 @@
 /****** Main Styling ******/
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Spectral', serif;
 	font-size: 16px;
-	color: #222;
-	background-color: #FaFaFa;
+	color: rgb(252, 248, 248);
+	background-color: #3b3a3a;
 	text-align: center;
 	line-height: 1.4em;
 }
